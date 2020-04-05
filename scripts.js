@@ -8,7 +8,9 @@
 
 // The variable will change from X to O based on what player turn it is. We need to hold this so we can place an X or O on the board when they're clicked.
 let currentMarker = 'X'
-
+let board = [['','',''],
+             ['','',''],
+             ['','','']]
 
 
 
@@ -52,7 +54,7 @@ const addMarker = (id) => {
   // .getElementById(id)
   // document
   // .innerHTML 
-
+checkForWin()
   changeMarker()
 }
 
@@ -106,3 +108,25 @@ const resetBoard = () => {
     squares[i].innerHTML = null
   }  
 }
+
+const checkForWin = () => {
+  if(horizontalWin() || verticalWin() || diagonalWin()) {
+    window.alert(`Player ${currentMarker} won!`)
+  } else {
+    changeMarker()
+  }
+}
+
+const horizontalWin = () => {
+  return true
+  // Your code here to check for horizontal wins
+}
+
+const verticalWin = () => {
+  // Your code here to check for vertical wins
+}
+
+const diagonalWin = () => {
+  // Your code here to check for diagonal wins
+}
+
